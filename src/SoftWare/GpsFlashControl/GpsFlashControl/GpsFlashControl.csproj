@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{823609F6-F042-4F3E-94A8-3BD854CCCE68}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GpsFlashControl</RootNamespace>
+    <AssemblyName>GpsFlashControl</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>program.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="SerialNET.200, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d529d3eaea61b0c3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Franson\SerialTools SDK\dotNet200\SerialNET.200.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataTypes.cs" />
+    <Compile Include="DeviceConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceConfigForm.Designer.cs">
+      <DependentUpon>DeviceConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainUnit.Designer.cs">
+      <DependentUpon>MainUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceConfigForm.resx">
+      <DependentUpon>DeviceConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainUnit.resx">
+      <DependentUpon>MainUnit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetPortDialog.resx">
+      <DependentUpon>SetPortDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetVirtualPortDialog.resx">
+      <DependentUpon>SetVirtualPortDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetVirtualPortNameDialog.resx">
+      <DependentUpon>SetVirtualPortNameDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SerialListener.cs" />
+    <Compile Include="SetPortDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetPortDialog.Designer.cs">
+      <DependentUpon>SetPortDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetVirtualPortDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetVirtualPortDialog.Designer.cs">
+      <DependentUpon>SetVirtualPortDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetVirtualPortNameDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetVirtualPortNameDialog.Designer.cs">
+      <DependentUpon>SetVirtualPortNameDialog.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="plat16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stop16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="arrow16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="excel16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="delete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="calcDist16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="program.ico" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\about1.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
